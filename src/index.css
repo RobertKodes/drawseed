@@ -103,10 +103,10 @@ code,
   bottom: max(12px, env(safe-area-inset-bottom));
   z-index: 3;
   max-width: 52rem;
-  padding: 0.7rem 0.85rem 0.75rem;
-  background: color-mix(in srgb, var(--paper) 82%, #fff 18%);
-  border: 1px solid var(--rule);
-  box-shadow: 0 10px 28px #14110e14;
+  padding: 0.75rem 0.9rem 0.8rem;
+  background: #efe8d8;
+  border: 1px solid #14110e2e;
+  box-shadow: 0 14px 36px #14110e24;
 }
 
 .dock-row {
