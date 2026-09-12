@@ -80,13 +80,24 @@ export default function App() {
 
   const onCopy = useCallback(async () => {
     if (!derivedRef.current) return
+    const text = derivedRef.current.address
+    let ok = false
     try {
-      await navigator.clipboard.writeText(derivedRef.current.address)
-      setCopied(true)
-      window.setTimeout(() => setCopied(false), 1400)
+      await navigator.clipboard.writeText(text)
+      ok = true
     } catch {
-      setCopied(false)
+      const el = document.createElement('textarea')
+      el.value = text
+      el.setAttribute('readonly', '')
+      el.style.position = 'fixed'
+      el.style.left = '-9999px'
+      document.body.appendChild(el)
+      el.select()
+      ok = document.execCommand('copy')
+      el.remove()
     }
+    setCopied(ok)
+    if (ok) window.setTimeout(() => setCopied(false), 1400)
   }, [])
 
   useEffect(() => {

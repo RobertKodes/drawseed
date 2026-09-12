@@ -53,7 +53,12 @@ export async function peekAccount(address: string): Promise<PeekResult> {
 
   for (const url of urls) {
     try {
-      const connection = new Connection(url, 'confirmed')
+      const connection = new Connection(url, {
+        commitment: 'confirmed',
+        disableRetryOnRateLimit: true,
+        fetch: (input, init) =>
+          fetch(input, { ...init, signal: AbortSignal.timeout(8000) }),
+      })
       const pubkey = new PublicKey(address)
       const info = await connection.getAccountInfo(pubkey)
       return {

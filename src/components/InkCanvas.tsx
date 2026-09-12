@@ -166,10 +166,12 @@ export function InkCanvas({ strokes, onStrokeEnd, onLiveStroke }: Props) {
       const pt = toPoint(e, box, t0Ref.current)
       liveRef.current = { id: newStrokeId(), points: [pt] }
       lastCssRef.current = { x: e.clientX, y: e.clientY }
-      try {
-        canvas.setPointerCapture(e.pointerId)
-      } catch {
-        /* some browsers throw if already captured */
+      if (e.pointerType !== 'mouse') {
+        try {
+          canvas.setPointerCapture(e.pointerId)
+        } catch {
+          /* some browsers throw if already captured */
+        }
       }
       emitLive(liveRef.current, true)
       redraw()

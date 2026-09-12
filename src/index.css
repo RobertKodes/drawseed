@@ -23,7 +23,7 @@ body,
 body {
   color: var(--ink);
   background: var(--paper);
-  font-family: "Iowan Old Style", Palatino, "Palatino Linotype", Georgia, serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -70,9 +70,10 @@ code,
 
 .mast h1 {
   margin: 0;
-  font-size: 1.15rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
 }
 
 .mast p {
@@ -126,8 +127,8 @@ button {
   border: 1px solid var(--rule);
   background: var(--chip);
   color: var(--ink);
-  padding: 0.28rem 0.5rem;
-  font-size: 0.72rem;
+  padding: 0.32rem 0.58rem;
+  font-size: 0.75rem;
   letter-spacing: 0.01em;
   cursor: pointer;
 }
