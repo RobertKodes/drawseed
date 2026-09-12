@@ -6,6 +6,8 @@ Not a wallet. Not an explorer skin. The new input is a stroke — if you strip t
 
 Live: https://robertkodes.github.io/drawseed/
 
+If that 404s, `gh-pages` is already pushed (`dist/` + `.nojekyll`). In the repo settings, Pages → Deploy from branch `gh-pages`, folder `/`.
+
 ## Loop
 
 1. Full-bleed sheet. Pointer, pen, or finger. Undo last stroke, or wipe the sheet.
